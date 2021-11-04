@@ -1,19 +1,21 @@
-class Account()
+class Account():
 
     def __init__(self, owner, balance) -> None:
         self.owner = owner
         self.balance = balance
 
     def deposit(self, amount):
-        if amount > 0:
+        if amount < 0:
+            print('Cannot deposit negative amount')
+        else:
             self.balance += amount
-        else :
-            raise 'Cannot deposit negative amount'
+            print(f' You have deposited {amount}$')
     
     def withdraw(self, amount):
-        if amount > balance:
-            raise 'Cannot withdraw more than balance'
-        if amount < 0:
-            raise 'Cannot whithdraw negative amount'
-        balance -= amount
-        print(f' You have whithrawed {amount}$')
+        if amount > self.balance:
+            print('Cannot withdraw more than balance')
+        elif amount < 0:
+            print('Cannot whithdraw negative amount')
+        else:
+            self.balance -= amount
+            print(f' You have whithrawed {amount}$')
