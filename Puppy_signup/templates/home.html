@@ -1,0 +1,13 @@
+{# HOME HTML #}
+
+{% extends "basic.html" %}
+
+{% block content%}
+
+<div class='jumbotron'>
+    <p>Welcome to puppe haven !</p> 
+    <p>Signup ? </p>
+        <a href="{{ url_for('signup_form')}}">Sign up here !</a>
+</div>
+
+{% endblock %}
