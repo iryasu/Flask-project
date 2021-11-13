@@ -28,7 +28,7 @@ class InfoForm(FlaskForm):
 def index():
     form = InfoForm()
     if form.validate_on_submit():
-        flash('thank you for filling the form !')   ## creates an alert box
+        flash(f'thank you for filling the form for your {form.breed.data}!')   ## creates an alert box
 
         session['fields'] = ['breed', 'neutered', 'mood', 'food', 'feedback']
         session['breed'] = form.breed.data                      ## store data for a user session
@@ -36,7 +36,7 @@ def index():
         session['mood'] = form.mood.data
         session['food'] = form.food_choice.data
         session['feedback'] = form.feedback.data
-        
+
         return redirect(url_for('thank_you'))                   ## redirect user when he submits
     return render_template('index.html', form=form)             ## render page first time
 
