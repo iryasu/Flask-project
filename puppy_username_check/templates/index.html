@@ -1,0 +1,23 @@
+{% extends "basic.html" %}
+
+{% block content%}
+
+<h2>Welcome to Puppy Username Check</h2>
+
+<p>Let's see if your username is secure !</p>
+
+<p>Fill out the form below with a username that has these conditions</p>
+
+<p>
+    <li>Must have an upper case letter somewhere</li>
+    <li>Must have a lower case letter somewhere</li>
+    <li>Must have a number at the end</li>
+</p>
+
+<form action="{{url_for('username_check')}}">
+    <label for="username">UserName</label>
+    <input type="text" name="username">
+    <input type="submit" value="Submit Form">
+</form>
+
+{% endblock %}

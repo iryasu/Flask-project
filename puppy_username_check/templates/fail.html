@@ -1,0 +1,15 @@
+{%extends 'basic.html'%}
+
+{% block content %}
+
+<h2>Let's see how you performed</h2>
+
+<h2>Oh no, your username : {{username}} has failed the following requirements :</h2>
+{% for req in requirements %}
+    {% if req[0] %}
+        <h3>
+        <li>{{req[1]}}</li>
+        </h3>
+    {% endif %}
+{% endfor %}
+{% endblock %}
