@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content%}
+    <div class="container-fluid bg-gray">
+        <h1 class="display-2">Welcome to the puppy adoption website</h1>
+        <br>
+        <br>
+        <a class="display-6" href="{{url_for('list_pup')}}">List of all the puppies</a>
+        <br>
+        <br>
+        <a class="display-6" href="{{url_for('add_pup')}}">Add a puppy for adoption</a>
+        <br>
+        <br>
+        <a class="display-6" href="{{url_for('delete_pup')}}">Remove a puppy from adoption</a>
+        <br>
+        <br>
+        <a class="display-6" href="{{url_for('add_owner')}}">Add an owner for a puppy</a>
+    </div>
+
+{% endblock %}

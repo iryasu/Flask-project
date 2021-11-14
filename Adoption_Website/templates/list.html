@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content%}
+
+    <h1 class="display-2">List of all the puppies for adoption</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Owner</th>
+                <th scope="id"> Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pup in puppies %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{pup.name}}</td>
+                    <td>{{pup.owner.name}}</td>
+                    <td>{{pup.id}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}
